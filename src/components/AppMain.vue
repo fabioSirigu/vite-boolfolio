@@ -86,7 +86,7 @@ export default {
                                                 </div>
                                                 <div class="technologies">
                                                       <strong>Technologies: </strong>
-                                                      <template v-if="project.technologies.lenght > 0">
+                                                      <template v-if="project.technologies.length > 0">
                                                             <span v-for="technology in project.technologies">
                                                                   {{ technology.name }}
                                                             </span>
@@ -132,12 +132,11 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-      height: 600px;
-
       .card-image {
             img {
-                  height: 100%;
+                  width: 100%;
                   object-fit: cover;
+                  aspect-ratio: 1/1;
             }
       }
 }
