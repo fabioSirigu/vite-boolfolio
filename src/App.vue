@@ -1,12 +1,9 @@
 <script>
 import AppNav from './components/AppNav.vue'
-import AppBanner from './components/AppBanner.vue'
-import AppMain from './components/AppMain.vue'
+
 export default {
     components: {
-        AppNav,
-        AppBanner,
-        AppMain
+        AppNav
     },
 }
 </script>
@@ -14,8 +11,7 @@ export default {
 <template>
 
     <AppNav></AppNav>
-    <AppBanner></AppBanner>
-    <AppMain></AppMain>
+    <router-view></router-view>
 
 </template>
 
