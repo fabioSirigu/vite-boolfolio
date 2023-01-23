@@ -1,9 +1,8 @@
 <script>
-import AppBanner from '../components/AppBanner.vue';
 import ProjectsList from '../components/ProjectsList.vue';
 export default {
       name: 'PortfolioView',
-      components: { AppBanner, ProjectsList },
+      components: { ProjectsList },
       data() {
             return {
                   pageTitle: 'Portfolio'
@@ -13,7 +12,6 @@ export default {
 </script>
 
 <template>
-      <AppBanner :title="pageTitle" />
       <ProjectsList />
 
 </template>

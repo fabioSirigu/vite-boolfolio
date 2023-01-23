@@ -2,8 +2,6 @@
 
 export default {
       name: 'HomeView',
-
-
 }
 </script>
 
@@ -21,11 +19,18 @@ export default {
                   <br>
                   Qui troverai tutti i progetti e le tecnologie utilizzate nei progetti di NazOne.
             </p>
-            <router-link :to="{ name: 'portfolio' }">All projects here!</router-link>
+            <router-link :to="{ name: 'portfolio' }" class="project_link">All projects here!</router-link>
       </div>
 </template>
 
 
 <style lang="scss" scoped>
+.project_link {
+      color: white;
 
+      :hover {
+            color: red;
+            font-weight: bold;
+      }
+}
 </style>

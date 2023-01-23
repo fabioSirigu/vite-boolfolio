@@ -1,13 +1,10 @@
 <script>
-import AppBanner from '../components/AppBanner.vue';
 export default {
-      name: 'ContactsView',
-      components: { AppBanner }
+      name: 'ContactsView'
 }
 </script>
 
 <template>
-      <AppBanner title="Contacts Page" />
       <div class="container">
 
             <p class="lead">
