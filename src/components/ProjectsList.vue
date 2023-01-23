@@ -27,7 +27,7 @@ export default {
                         })
             },
             getImagePath(path) {
-
+                  console.log(path);
                   if (path) {
                         return this.store.api_base_url + '/storage/' + path
                   }
