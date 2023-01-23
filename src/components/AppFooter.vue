@@ -1,6 +1,12 @@
 <script>
+import { store } from '../store.js'
 export default {
-      name: 'AppFooter'
+      name: 'AppFooter',
+      data() {
+            return {
+                  store
+            }
+      }
 }
 </script>
 
@@ -10,25 +16,10 @@ export default {
                   <a class="navbar-brand" href="/">
                         <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
                   </a>
-                  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                  </button>
                   <div class="collapse navbar-collapse" id="mainNav">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                               <li class="nav-item">
-                                    <router-link class="nav-link" :to="{ name: 'home' }" aria-current="page">Home <span
-                                                class="visually-hidden">(current)</span></router-link>
-                              </li>
-                              <li class="nav-item">
-                                    <router-link class="nav-link" :to="{ name: 'portfolio' }">Portfolio</router-link>
-                              </li>
-                              <li class="nav-item">
-                                    <router-link class="nav-link" :to="{ name: 'about' }">About</router-link>
-                              </li>
-                              <li class="nav-item">
-                                    <router-link class="nav-link" :to="{ name: 'contacts' }">Contacts</router-link>
+                                    <a class="nav-link" :href="store.gitHub_url" aria-current="page">GitHub</a>
                               </li>
                         </ul>
 
