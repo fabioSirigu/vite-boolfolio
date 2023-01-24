@@ -12,18 +12,20 @@ export default {
 
 <template>
       <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
-            <div class="container">
-                  <a class="navbar-brand" href="/">
-                        <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
-                  </a>
-                  <div class="collapse navbar-collapse" id="mainNav">
-                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                              <li class="nav-item">
-                                    <a class="nav-link" :href="store.gitHub_url" aria-current="page">GitHub</a>
-                              </li>
-                        </ul>
+            <div class="container d-flex justify-content-center">
 
-                  </div>
+
+                  <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                              <a class="nav-link" :href="store.gitHub_url" aria-current="page"
+                                    target="_blank">GitHub</a>
+                        </li>
+                        <li class="nav-item">
+                              <a class="nav-link" :href="store.linkedinUrl" aria-current="page"
+                                    target="_blank">LinkedIn</a>
+                        </li>
+                  </ul>
+
             </div>
       </nav>
 
