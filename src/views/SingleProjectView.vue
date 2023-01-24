@@ -33,18 +33,24 @@ export default {
 <template>
       <div class="container my-3">
             <div class="single-project" v-if="project">
-                  <img class="img-fluid w-100" :src="store.api_base_url + '/storage/' + project.cover_image"
-                        :alt="project.title">
-                  <div class="container">
+                  <div class="cover_image mb-2">
+                        <img :src="store.api_base_url + '/storage/' + project.cover_image" :alt="project.title">
+                  </div>
+                  <div class="text-description">
                         <h2>
                               {{ project.title }}
                         </h2>
+                        <h3>
+                              <a target="_blank" :href="project.gitHubUrl">
+                                    {{ project.gitHubUrl }}
+                              </a>
+                        </h3>
                         <div class="content">
                               {{ project.description }}
                         </div>
                   </div>
             </div>
-            <router-link class="nav-link" :to="{ name: 'portfolio' }">
+            <router-link class="nav-link mt-2" :to="{ name: 'portfolio' }">
                   <div class="btn btn-primary my-2">
                         <font-awesome-icon icon="fa-solid fa-chevron-left" class="mr-2" /> Torna al portfolio
                   </div>
