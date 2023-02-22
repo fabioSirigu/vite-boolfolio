@@ -8,14 +8,14 @@ export default {
 <template>
       <div class="content">
 
-            <div class="container d-flex flex-column justify-content-center h-100 w-50 text-center">
+            <div class="container px-5 h-100 d-flex justify-content-center align-items-center text-center">
                   <div class="layer">
                         <div class="img_user text-center">
-                              <img src="/img/user.jpg" alt="">
+                              <img src="/img/linkedinfoto.png" alt="">
                         </div>
                         <div class="about_me">
                               <h1>NazOne's Projects</h1>
-                              <h2 class="description">Junior Full Stack Developer
+                              <h2 class="description">Junior Full Stack Web Developer
 
                               </h2>
                               <router-link :to="{ name: 'portfolio' }" class="project_link">
@@ -24,19 +24,20 @@ export default {
                         </div>
                   </div>
             </div>
+
       </div>
 </template>
 
 
 <style lang="scss" scoped>
 .content {
-      background-image: url(/img/large-triangles.svg);
-
+      background-image: url(/img/vanishing-stripes.svg);
 
       .layer {
-            background-color: rgba($color: #000000, $alpha: 0.4);
-            padding: 2rem 0;
-            border-radius: 1rem;
+            background-color: rgba($color: #000000, $alpha: 0.75);
+            border-radius: 25px;
+            width: 60%;
+            padding: 3rem 0;
 
             .img_user {
                   img {
@@ -48,9 +49,9 @@ export default {
             .project_link {
                   text-decoration: none;
                   text-transform: uppercase;
-                  color: black;
+                  color: white;
                   font-size: 2rem;
-                  transition: .2s;
+                  transition: 0.4s;
 
                   &:hover {
                         color: red;
@@ -60,5 +61,7 @@ export default {
             }
 
       }
+
+
 }
 </style>

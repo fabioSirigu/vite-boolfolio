@@ -8,7 +8,7 @@ export default {
                   pageTitle: 'Portfolio'
             }
       }
-}
+};
 </script>
 
 <template>

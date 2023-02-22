@@ -1,8 +1,11 @@
 // Import all of Bootstrap's CSS
 @import "/node_modules/bootstrap/scss/bootstrap";
 
+$primary: #aa0eb0;
+
 body {
-      background-color: rgb(37, 37, 37);
+      background: rgb(0, 9, 87);
+      background: linear-gradient(180deg, rgba(0, 9, 87, 1) 0%, rgba(170, 14, 176, 1) 52%, rgba(0, 9, 87, 1) 100%);
       color: white;
 
 }

@@ -1,8 +1,12 @@
 <script>
 import { store } from '../store.js';
 import axios from 'axios';
+import LoaderProjects from './LoaderProjects.vue';
 export default {
       name: 'ProjectsList',
+      components: {
+            LoaderProjects
+      },
       data() {
             return {
                   store,
@@ -59,13 +63,12 @@ export default {
 </script>
 
 <template>
-
       <section class="vue-home pt-5">
             <div class="container">
                   <template v-if="projects && !loading">
                         <div class="row row-cols-1 row-cols-sm-3 g-4">
                               <div class="col" v-for="project in projects.data">
-                                    <div class="card border-0 shadow-sm rounded h-100 text-dark">
+                                    <div class="card border-0 shadow-sm text-dark">
                                           <img class="card-image p-3" :src="getImagePath(project.cover_image)" alt="">
                                           <div class="card-body">
                                                 <h4>{{ project.title }}</h4>
@@ -124,14 +127,7 @@ export default {
 
                   </template>
                   <template v-else-if="loading">
-                        <div class="loading">
-                              Caricamento ...
-                              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                                    class="bi bi-hourglass-split" viewBox="0 0 16 16">
-                                    <path
-                                          d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z" />
-                              </svg>
-                        </div>
+                        <LoaderProjects />
                   </template>
                   <div v-else>
                         <p> No projects here </p>
@@ -142,22 +138,24 @@ export default {
 
 <style lang="scss" scoped>
 .vue-home {
-
       overflow-y: auto;
 
+
       .card {
+            background-color: rgba(255, 255, 255, 0.7);
+            height: 100%;
+            border-radius: 25px;
+
             .card-image {
-                  img {
-                        width: 100%;
-                        object-fit: cover;
-                        aspect-ratio: 1/1;
-                  }
+                  width: 150px;
+                  object-fit: cover;
+                  aspect-ratio: 1/1;
             }
+
       }
 
-      .loading {
-            font-size: 2rem;
-            text-align: center;
+      .pagination {
+            cursor: pointer;
       }
 }
 </style>

@@ -6,15 +6,18 @@ export default {
 
 <template>
       <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
-            <div class="container">
-                  <a class="navbar-brand" href="/">
-                        <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
-                  </a>
-                  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                  </button>
+      <div class="container">
+            <a class="navbar-brand" href="/">
+                  <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
+            </a>
+
+            <!-- <div class="animation">
+                              <div class="square">
+                                    <p class="square_invert">
+                                          Web Dev
+                                    </p>
+                              </div>
+                        </div> -->
                   <div class="collapse navbar-collapse" id="mainNav">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                               <li class="nav-item">
@@ -35,10 +38,21 @@ export default {
                   </div>
             </div>
       </nav>
-
 </template>
 
 <style lang="scss" scoped>
+@import "../styles/general.scss";
+
+/* @keyframes spinnow {
+      0% {
+            transform: rotate(0deg);
+      }
+
+      100% {
+            transform: rotate(360deg);
+      }
+} */
+
 .navbar {
       height: 80px;
       box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.7);
@@ -47,9 +61,40 @@ export default {
             width: 120px;
       }
 
-      :hover.nav-link {
-            scale: 1.2;
-            color: red;
+      /* .animation {
+            display: flex;
+            justify-content: center;
+
+            .square {
+                  animation: 7s spinnow infinite linear;
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background-color: #5400997c;
+                  border: 1px solid lightgray;
+
+                  .square_invert {
+                        display: flex;
+                        height: 100%;
+                        align-items: center;
+                        color: black;
+                        font-weight: bold;
+                  }
+
+
+            }
+      }
+ */
+      .nav-link {
+            transition: 0.4s;
+
+            &:hover {
+                  scale: 1.25;
+                  color: $primary;
+            }
       }
 }
 </style>
