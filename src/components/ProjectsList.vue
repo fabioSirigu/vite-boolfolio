@@ -31,7 +31,7 @@ export default {
                         })
             },
             getImagePath(path) {
-                  console.log(path);
+                  //console.log(path);
                   if (path) {
                         return this.store.api_base_url + '/storage/' + path
                   }
@@ -88,11 +88,14 @@ export default {
                                                       <span v-else>Uncategorized</span>
                                                 </div>
                                                 <div class="technologies">
-                                                      <strong>Technologies: </strong>
                                                       <template v-if="project.technologies.length > 0">
-                                                            <span v-for="technology in project.technologies">
-                                                                  {{ technology.name }}
-                                                            </span>
+                                                            <ul class="technologies_list">
+                                                                  <strong>Technologies: </strong>
+                                                                  <li v-for="technology in project.technologies">
+                                                                        {{ technology.name }}
+                                                                  </li>
+                                                            </ul>
+
                                                       </template>
                                                       <template v-else>
                                                             <span>No technologies.</span>
@@ -147,9 +150,28 @@ export default {
             border-radius: 25px;
 
             .card-image {
-                  width: 150px;
+                  border-radius: 25px;
+                  width: 100%;
                   object-fit: cover;
                   aspect-ratio: 1/1;
+            }
+
+            .technologies_list {
+                  display: flex;
+                  padding-left: 0;
+                  margin-bottom: 0;
+
+                  li {
+                        list-style: disc;
+                        padding: 0, 5px;
+                        margin-right: 1.2rem;
+                        color: gray;
+                  }
+
+                  li:first-of-type {
+                        padding-left: 5px;
+                        list-style: none;
+                  }
             }
 
       }
