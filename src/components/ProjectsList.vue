@@ -111,17 +111,17 @@ export default {
                               <ul class="pagination    ">
                                     <li class="page-item" v-if="projects.prev_page_url"
                                           @click="prevPage(projects.prev_page_url)">
-                                          <a class="page-link" aria-label="Previous">
+                                          <a class="page-link arrow" aria-label="Previous">
                                                 <span aria-hidden="true">&laquo;</span>
                                           </a>
                                     </li>
-                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
+                                    <li class="page-item active" aria-current="page"><a class="page-link number" href="#">{{
                                           projects.current_page
                                     }}</a></li>
 
                                     <li class="page-item" v-if="projects.next_page_url"
                                           @click="nextPage(projects.next_page_url)">
-                                          <a class="page-link" aria-label="Next">
+                                          <a class="page-link arrow" aria-label="Next">
                                                 <span aria-hidden="true">&raquo;</span>
                                           </a>
                                     </li>
@@ -178,6 +178,15 @@ export default {
 
       .pagination {
             cursor: pointer;
+
+            .page-link.number {
+                  background-color: rgb(87, 23, 146);
+                  border-color: white;
+            }
+
+            .page-link.arrow {
+                  color: rgb(87, 23, 146);
+            }
       }
 }
 </style>

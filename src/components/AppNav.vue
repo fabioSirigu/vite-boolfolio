@@ -6,16 +6,19 @@ export default {
 
 <template>
       <nav class="navbar navbar-expand-sm">
-            <div class="container">
-                  <a class="navbar-brand" href="/">
-                        <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
-                  </a>
+            <div class="container header_nav">
+
                   <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                         aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="mainNav">
-                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <ul class="list_nav navbar-nav ms-auto mt-2 mt-lg-0">
+                              <li class="nav-item">
+                                    <a class="navbar-brand" href="/">
+                                          <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
+                                    </a>
+                              </li>
                               <li class="nav-item">
                                     <router-link class="nav-link" :to="{ name: 'home' }" aria-current="page">Home <span
                                                 class="visually-hidden">(current)</span></router-link>
@@ -42,34 +45,51 @@ export default {
 .navbar {
       position: fixed;
       z-index: 1000;
-      width: 100%;
-      top: 0;
-      background-color: rgba(255, 255, 255, 0.2);
-      height: 80px;
-      box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.7);
+      padding: 0 1rem;
+      height: calc(100% - 80px);
+      background-color: rgb(0, 0, 0);
+      box-shadow: 12px -10px 10px 3px rgba(0, 0, 0, 0.7);
 
-      .logo {
-            filter: invert(1);
-            width: 120px;
-            transition: 0.5s;
 
-            &:hover {
-                  filter: invert(0);
-                  scale: 1.2;
+      .header_nav {
+            display: flex;
+            flex-direction: column;
+
+            .list_nav {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+
+                  .logo {
+                        filter: invert(1);
+                        width: 120px;
+                        margin-top: 2rem;
+                        transition: 0.5s;
+
+
+                        &:hover {
+                              scale: 1.2;
+                        }
+                  }
+
+
+
+                  .nav-link {
+                        transition: 0.4s;
+                        font-weight: 700;
+                        color: white;
+
+                        text-shadow: 10px 4px 4px rgb(48, 48, 48);
+
+
+                        &:hover {
+                              scale: 1.25;
+                              color: $primary;
+                        }
+                  }
             }
       }
 
 
-
-      .nav-link {
-            transition: 0.4s;
-            font-weight: 700;
-            color: white;
-
-            &:hover {
-                  scale: 1.25;
-                  color: $primary;
-            }
-      }
 }
 </style>

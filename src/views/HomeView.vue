@@ -9,6 +9,7 @@ export default {
       <div class="content">
 
             <div class="container px-5 h-100 d-flex justify-content-center align-items-center text-center">
+
                   <div class="border_animate">
                         <div class="layer">
                               <div class="img_user text-center">
@@ -37,6 +38,7 @@ export default {
 
 
 .content {
+
       .border_animate {
             --border-width: 5px;
 
@@ -47,6 +49,7 @@ export default {
             width: 60%;
             color: white;
             border-radius: var(--border-width);
+
 
             &::after {
                   position: absolute;

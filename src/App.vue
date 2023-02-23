@@ -19,9 +19,10 @@ export default {
 <style lang="scss">
 @use './styles/general.scss';
 
+
+
 .main {
-    margin-top: 80px;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 80px);
     padding: 2rem 0;
 }
 </style>
