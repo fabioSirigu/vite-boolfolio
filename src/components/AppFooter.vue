@@ -42,14 +42,13 @@ export default {
 
 .navbar {
       background-color: rgb(0, 0, 0);
-
       height: 80px;
       box-shadow: 0px -2px 10px 3px rgba(0, 0, 0, 0.7);
 
 
       .nav-link {
             font-weight: 700;
-            color: white;
+            color: $secondary;
             transition: 0.4s;
             text-shadow: 10px 4px 4px rgba(66, 68, 90, 1);
 

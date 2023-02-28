@@ -5,20 +5,17 @@ export default {
 </script>
 
 <template>
-      <nav class="navbar navbar-expand-sm">
-            <div class="container header_nav">
-
-                  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="header_nav">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                  <a href="/">
+                        <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="mainNav">
-                        <ul class="list_nav navbar-nav ms-auto mt-2 mt-lg-0">
-                              <li class="nav-item">
-                                    <a class="navbar-brand" href="/">
-                                          <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
-                                    </a>
-                              </li>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
                               <li class="nav-item">
                                     <router-link class="nav-link" :to="{ name: 'home' }" aria-current="page">Home <span
                                                 class="visually-hidden">(current)</span></router-link>
@@ -33,51 +30,54 @@ export default {
                                     <router-link class="nav-link" :to="{ name: 'contacts' }">Contacts</router-link>
                               </li>
                         </ul>
-
                   </div>
-            </div>
-      </nav>
+            </nav>
+
+      </div>
 </template>
 
 <style lang="scss" scoped>
 @import "../styles/general.scss";
 
-.navbar {
+.header_nav {
       position: fixed;
       z-index: 1000;
-      padding: 0 1rem;
-      height: calc(100% - 80px);
+      top: 0;
+      padding: 0 2rem;
+      height: 80px;
+      width: 100%;
       background-color: rgb(0, 0, 0);
       box-shadow: 12px -10px 10px 3px rgba(0, 0, 0, 0.7);
 
 
-      .header_nav {
+      .navbar {
+            height: 100%;
+            width: 80%;
             display: flex;
-            flex-direction: column;
+            margin: auto;
+            align-items: center;
 
-            .list_nav {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-
-                  .logo {
-                        filter: invert(1);
-                        width: 120px;
-                        margin-top: 2rem;
-                        transition: 0.5s;
+            .logo {
+                  filter: invert(1);
+                  width: 120px;
+                  transition: 0.5s;
 
 
-                        &:hover {
-                              scale: 1.2;
-                        }
+                  &:hover {
+                        scale: 1.2;
                   }
+            }
 
 
+            .navbar-nav {
+                  flex-grow: 1;
+                  display: flex;
+                  justify-content: end;
 
                   .nav-link {
                         transition: 0.4s;
                         font-weight: 700;
-                        color: white;
+                        color: $secondary;
 
                         text-shadow: 10px 4px 4px rgb(48, 48, 48);
 

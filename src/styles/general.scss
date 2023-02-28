@@ -3,9 +3,26 @@
 
 $primary: #aa0eb0;
 
+$secondary: rgb(223, 135, 3);
+
 body {
       background: rgb(0, 9, 87);
       background: linear-gradient(90deg, rgba(0, 9, 87, 1) 0%, rgba(170, 14, 176, 1) 52%, rgba(0, 9, 87, 1) 100%);
       color: white;
 
+}
+
+.my-btn {
+      background-color: $secondary;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.8);
+
+
+      &:hover {
+            background-color: $primary;
+            scale: 0.95;
+            border: 1px solid white;
+      }
 }

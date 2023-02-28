@@ -22,7 +22,10 @@ export default {
 
 
 .main {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 160px);
+    margin-top: 80px;
     padding: 2rem 0;
+    display: flex;
+    align-items: center;
 }
 </style>
