@@ -7,15 +7,12 @@ export default {
 <template>
       <div class="container">
             <p class="lead">
-                  😨 Ops, Page not found!
+                  😨 Ops, c'è stato un problema!
             </p>
-            <router-link to="/">Go to Homepage</router-link>
+            <router-link to="/">torna alla Homepage</router-link>
 
       </div>
-
 </template>
 
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

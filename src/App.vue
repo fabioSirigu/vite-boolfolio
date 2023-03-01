@@ -1,17 +1,17 @@
 <script>
-import AppNav from './components/AppNav.vue'
+import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
 
 export default {
     components: {
-        AppNav,
+        AppHeader,
         AppFooter
     },
 }
 </script>
 
 <template>
-    <AppNav></AppNav>
+    <AppHeader></AppHeader>
     <router-view class="main"></router-view>
     <AppFooter></AppFooter>
 </template>

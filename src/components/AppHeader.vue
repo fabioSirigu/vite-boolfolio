@@ -1,13 +1,31 @@
 <script>
+import { onMounted, onUnmounted } from 'vue';
+
 export default {
-      name: 'AppNav'
-}
+      name: 'AppHeader',
+      setup() {
+            const closeNavbar = () => {
+                  const navbar = document.querySelector('.navbar-collapse');
+                  if (navbar.classList.contains('show')) {
+                        navbar.classList.remove('show');
+                  }
+            };
+
+            onMounted(() => {
+                  document.addEventListener('click', closeNavbar);
+            });
+
+            onUnmounted(() => {
+                  document.removeEventListener('click', closeNavbar);
+            });
+      },
+};
 </script>
 
 <template>
       <div class="header_nav">
             <nav class="navbar navbar-expand-lg navbar-light">
-                  <a href="/">
+                  <a class="link_logo" href="/">
                         <img class="logo" src="/img/logoNazOne.png" alt="logo Nazone">
                   </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -52,14 +70,18 @@ export default {
 
       .navbar {
             height: 100%;
-            width: 80%;
+            width: 50%;
             display: flex;
             margin: auto;
             align-items: center;
 
+            .navbar-toggler {
+                  background-color: white;
+            }
+
+
             .logo {
                   filter: invert(1);
-                  width: 120px;
                   transition: 0.5s;
 
 
@@ -78,12 +100,12 @@ export default {
                         transition: 0.4s;
                         font-weight: 700;
                         color: $secondary;
-
+                        transition: 0.4s;
                         text-shadow: 10px 4px 4px rgb(48, 48, 48);
 
 
                         &:hover {
-                              scale: 1.25;
+                              scale: 1.20;
                               color: $primary;
                         }
                   }

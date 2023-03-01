@@ -51,50 +51,105 @@ export default {
 </script>
 
 <template>
-      <div class="container">
+      <div class="container h-100">
+            <div class="contacts_content row d-flex">
+                  <div class="form col-12 col-lg-8">
+                        <h2 class="lead">
+                              Contattami per informazioni
+                        </h2>
+                        <div v-if="success" class="alert alert-success text-start" role="alert">
+                              Messaggio inviato con successo!
+                        </div>
+                        <form @submit.prevent="sendForm()">
+                              <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" name="name" id="name" v-model="name" class="form-control"
+                                          placeholder="Mario Rossi" aria-describedby="fullNameHelper">
+                                    <p v-for="(error, index) in errors.name">
+                                          {{ error }}</p>
+                                    <small id="fullNameHelper" class="text-muted">Add your full name</small>
+                              </div>
+                              <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" name="email" id="email" v-model="email" class="form-control"
+                                          placeholder="mario.rossi@example.com" aria-describedby="emailHelper">
+                                    <p v-for="(error, index) in errors.email">
+                                          {{ error }}</p>
+                                    <small id="emailHelper" class="text-muted">Add your email address</small>
+                              </div>
 
-            <p class="lead">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, adipisci optio, tempore maiores sit
-                  asperiores
-                  sed est nulla esse quos quam laudantium, voluptatibus minus officiis assumenda. Ex vitae eos earum.
-            </p>
-            <div v-if="success" class="alert alert-success text-start" role="alert">
-                  Messaggio inviato con successo!
+                              <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" name="message" id="message" v-model="message"
+                                          rows="5"></textarea>
+                                    <p v-for="(error, index) in errors.message">
+                                          {{ error }}</p>
+                              </div>
+
+                              <button type="submit" class="btn my-btn" :disabled="loading">
+                                    {{ loading ? 'Sending..' : 'Contact me' }}
+                              </button>
+                        </form>
+                  </div>
+                  <div class="contacts_tecnologies col-12 col-lg-6">
+                        <h2 class="lead">Le mie tecnologie</h2>
+                        <ul class="row row-cols-2 g-2">
+                              <li class="tech_image" v-for="(image, index) in store.arrayTecnologies" :key="index">
+                                    <img :src="image.image" alt="">
+                              </li>
+                        </ul>
+                  </div>
             </div>
-            <form @submit.prevent="sendForm()">
-                  <div class="mb-3">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" name="name" id="name" v-model="name" class="form-control"
-                              placeholder="Mario Rossi" aria-describedby="fullNameHelper">
-                        <p v-for="(error, index) in errors.name">
-                              {{ error }}</p>
-                        <small id="fullNameHelper" class="text-muted">Add your full name</small>
-                  </div>
-                  <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" id="email" v-model="email" class="form-control"
-                              placeholder="mario.rossi@example.com" aria-describedby="emailHelper">
-                        <p v-for="(error, index) in errors.email">
-                              {{ error }}</p>
-                        <small id="emailHelper" class="text-muted">Add your email address</small>
-                  </div>
-
-                  <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" name="message" id="message" v-model="message"
-                              rows="5"></textarea>
-                        <p v-for="(error, index) in errors.message">
-                              {{ error }}</p>
-                  </div>
-
-                  <button type="submit" class="btn btn-primary" :disabled="loading">
-                        {{ loading? 'Sending..': 'Contact me' }}
-                  </button>
-            </form>
       </div>
 </template>
 
 
 <style lang="scss" scoped>
+@import '../styles/general.scss';
 
+.contacts_content {
+      width: 80%;
+      margin: auto;
+      margin-bottom: 80px;
+      padding: 3rem 1rem;
+      display: flex;
+      justify-content: center;
+      border-radius: 25px;
+      box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.8);
+      text-shadow: 5px 2px 5px rgb(48, 48, 48);
+
+
+
+      .lead {
+            text-align: center;
+            color: $secondary;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+      }
+
+      .contacts_tecnologies {
+            text-align: center;
+            height: 100%;
+
+            h3 {
+                  padding-top: 1rem;
+            }
+
+
+            ul {
+                  background-color: rgba($color: #ffffff, $alpha: 0.5);
+                  border-radius: 25px;
+                  display: flex;
+                  padding: 1rem;
+
+                  .tech_image {
+                        list-style: none;
+
+                        img {
+                              width: 80px;
+                        }
+                  }
+            }
+      }
+}
 </style>

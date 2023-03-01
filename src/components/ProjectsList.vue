@@ -48,11 +48,11 @@ export default {
                   return text
             },
             prevPage(url) {
-                  console.log(url)
+                  //console.log(url)
                   this.getProjects(url)
             },
             nextPage(url) {
-                  console.log(url)
+                  //console.log(url)
                   this.getProjects(url)
             }
       },
@@ -63,9 +63,10 @@ export default {
 </script>
 
 <template>
-      <section class="vue-home pt-5">
-            <div class="container">
+      <div class="container h-100">
+            <section class="vue-home">
                   <template v-if="projects && !loading">
+                        <!-- Card dei progetti -->
                         <div class="row row-cols-1 row-cols-sm-4 g-4">
                               <div class="col" v-for="project in projects.data">
                                     <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"
@@ -79,8 +80,8 @@ export default {
                                     </router-link>
                               </div>
                         </div>
-
-                        <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
+                        <!-- Sezione page navigation -->
+                        <nav aria-label="Page navigation" class="d-flex justify-content-center py-4">
                               <ul class="pagination">
 
                                     <li class="page-item" v-if="projects.prev_page_url"
@@ -101,24 +102,23 @@ export default {
                                     </li>
                               </ul>
                         </nav>
-
                   </template>
                   <template v-else-if="loading">
                         <LoaderProjects />
                   </template>
                   <div v-else>
-                        <p> No projects here </p>
+                        <p> Nessun progetto! </p>
                   </div>
-            </div>
-      </section>
+            </section>
+      </div>
 </template>
 
 <style lang="scss" scoped>
 @import "../styles/general.scss";
 
 .vue-home {
-      overflow-y: auto;
-
+      height: 100%;
+      margin-bottom: 80px;
 
       .card {
             background-color: rgba(255, 255, 255, 0.7);
@@ -135,13 +135,13 @@ export default {
                   }
 
                   .layover {
-                        bottom: -2rem;
+                        bottom: 2rem;
                   }
             }
 
             .card-image {
                   border-radius: 25px;
-                  filter: blur(4px);
+                  /* filter: blur(2px); */
                   width: 100%;
                   object-fit: cover;
                   aspect-ratio: 1/1;
@@ -152,7 +152,7 @@ export default {
                   display: flex;
                   justify-content: center;
                   height: 50px;
-                  width: 70%;
+                  width: 80%;
                   bottom: 50%;
                   left: 50%;
                   transform: translate(-50%, 50%);
@@ -192,8 +192,6 @@ export default {
       }
 
       .pagination {
-            position: relative;
-            bottom: -5rem;
             cursor: pointer;
 
             .page-link.number {

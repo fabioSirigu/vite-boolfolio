@@ -132,13 +132,13 @@ export default {
 
                   .title {
                         font-weight: bold;
-                        color: $primary;
+                        color: $secondary;
 
                   }
 
                   .type {
                         h5 {
-                              color: $primary;
+                              color: $secondary;
                         }
                   }
 
@@ -154,7 +154,7 @@ export default {
                                     list-style: none;
                                     padding: 0;
                                     margin-right: 1.5rem;
-                                    color: $primary;
+                                    color: $secondary;
                               }
                         }
 
@@ -168,7 +168,7 @@ export default {
                               transition: 0.2s;
 
                               &:hover {
-                                    color: $primary;
+                                    color: $secondary;
                                     text-decoration: underline;
                               }
                         }

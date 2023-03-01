@@ -1,14 +1,19 @@
 // Import all of Bootstrap's CSS
 @import "/node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Rampart+One&display=swap');
 
 $primary: #aa0eb0;
 
 $secondary: rgb(223, 135, 3);
 
+$fontPrimary: 'Audiowide', cursive;
+$fontSecondary: 'Rampart One', cursive;
+
 body {
       background: rgb(0, 9, 87);
       background: linear-gradient(90deg, rgba(0, 9, 87, 1) 0%, rgba(170, 14, 176, 1) 52%, rgba(0, 9, 87, 1) 100%);
       color: white;
+      font-family: $fontPrimary;
 
 }
 
@@ -26,3 +31,136 @@ body {
             border: 1px solid white;
       }
 }
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+      /* header */
+      .link_logo {
+            .logo {
+                  width: 80px;
+            }
+      }
+
+      .navbar-toggler {
+            margin: auto;
+      }
+
+      .navbar-collapse {
+            margin: 1rem 0;
+            background-color: black;
+            box-shadow: 12px -10px 10px 3px rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            text-align: center;
+
+      }
+
+      /* home */
+      .project_link {
+            width: 100%;
+            text-align: center;
+
+            .title,
+            .description {
+                  font-size: 16px;
+            }
+
+
+            .img_user {
+                  img {
+                        width: 100px;
+                  }
+            }
+      }
+
+      /* project list */
+
+
+      /* about */
+      .content {
+
+            .my-container {
+                  flex-direction: column;
+                  text-align: center;
+            }
+
+      }
+
+      /* contacts */
+      .contacts_content {
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+
+
+
+            .lead {
+                  text-align: center;
+                  color: $secondary;
+                  font-size: 1.8rem;
+                  margin-bottom: 2rem;
+            }
+
+            .contacts_tecnologies {
+                  text-align: center;
+                  height: 100%;
+
+                  h3 {
+                        padding-top: 1rem;
+                  }
+
+
+                  ul {
+                        background-color: rgba($color: #ffffff, $alpha: 0.5);
+                        border-radius: 25px;
+                        display: flex;
+                        padding: 1rem;
+
+                        .tech_image {
+                              list-style: none;
+
+                              img {
+                                    width: 80px;
+                              }
+                        }
+                  }
+            }
+      }
+
+      /* footer */
+      .tecnologies ul {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .nav_image {
+                  display: none;
+            }
+
+            .nav-link {
+                  font-size: 12px;
+                  position: static;
+            }
+
+      }
+}
+
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {}
+
+// XX-Large devices (larger desktops)
+// No media query since the xxl breakpoint has no upper bound on its width
