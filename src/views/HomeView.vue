@@ -1,14 +1,28 @@
 <script>
-import { store } from '../store';
 export default {
       name: 'HomeView',
       data() {
             return {
-                  store
+                  jobTitles: ["Full Stack", "Front-End", "Back-End"],
+                  currentTitleIndex: 0
             }
+      },
+      methods: {
+            changeWord() {
+                  setInterval(() => {
+                        const jobTitleElement = document.getElementById("job-title");
+                        this.currentTitleIndex = (this.currentTitleIndex + 1) % this.jobTitles.length;
+                        jobTitleElement.textContent = `${this.jobTitles[this.currentTitleIndex]}`;
+                        jobTitleElement.classList.add("job-color");
+                  }, 2000);
+            }
+      },
+      mounted() {
+            this.changeWord();
       }
 }
 </script>
+
 
 <template>
       <div class="content">
@@ -22,7 +36,7 @@ export default {
                                     </div>
                                     <div class="about_me">
                                           <h2 class="description">
-                                                Junior Full Stack Web Developer
+                                                Junior <span id="job-title"></span> Web Developer
                                           </h2>
                                     </div>
                               </div>
@@ -76,6 +90,12 @@ export default {
 
                   }
 
+                  .job-color {
+                        font-family: $fontSecondary;
+
+                        color: red;
+                  }
+
                   &:hover {
                         background-color: $secondary;
                         box-shadow: 0px 0px 40px 10px rgba(128, 128, 128, 0.8);
@@ -83,10 +103,15 @@ export default {
 
                         .title,
                         .description {
-                              font-family: $fontSecondary;
                               color: black;
-                              text-shadow: 10px 4px 4px rgb(48, 48, 48);
+                              text-shadow: 5px 4px 4px rgb(48, 48, 48);
 
+                        }
+
+                        .job-color {
+                              font-family: $fontPrimary;
+
+                              color: black;
                         }
 
                         .img_user {
