@@ -63,11 +63,11 @@ export default {
 </script>
 
 <template>
-      <div class="container h-100">
+      <div class="container project_list">
             <section class="vue-home">
                   <template v-if="projects && !loading">
                         <!-- Card dei progetti -->
-                        <div class="row row-cols-1 row-cols-sm-4 g-4">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4">
                               <div class="col" v-for="project in projects.data">
                                     <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"
                                           class="router-link">
@@ -118,7 +118,6 @@ export default {
 
 .vue-home {
       height: 100%;
-      margin-bottom: 80px;
 
       .card {
             background-color: rgba(255, 255, 255, 0.7);

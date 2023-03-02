@@ -91,7 +91,7 @@ export default {
                               </button>
                         </form>
                   </div>
-                  <div class="contacts_tecnologies col-12 col-lg-6">
+                  <div class="contacts_tecnologies col-12 col-lg-4">
                         <h2 class="lead">Le mie tecnologie</h2>
                         <ul class="row row-cols-2 g-2">
                               <li class="tech_image" v-for="(image, index) in store.arrayTecnologies" :key="index">

@@ -79,27 +79,32 @@ export default {
 
 
 
+            .nav-item {
+                  height: 100%;
 
-            .nav-link {
-                  position: relative;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  font-weight: 700;
-                  color: $secondary;
-                  transition: 0.4s;
-                  text-shadow: 5px 4px 2px rgba(66, 68, 90, 1);
+                  .nav-link {
+                        position: relative;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-weight: 700;
+                        color: $secondary;
+                        transition: 0.4s;
+                        text-shadow: 5px 4px 2px rgba(66, 68, 90, 1);
 
 
 
 
-                  &:hover {
-                        color: $primary;
+                        &:hover {
+                              color: $primary;
+                        }
                   }
+
             }
 
             .nav_image {
                   margin: 0 0.5rem;
+
 
                   img {
                         position: absolute;

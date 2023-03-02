@@ -36,6 +36,9 @@ export default {
 
                   <div class="d-flex">
                         <div class="row row-cols-2">
+                              <div class="cover_image mb-2">
+                                    <img :src="store.api_base_url + '/storage/' + project.cover_image" :alt="project.title">
+                              </div>
                               <div class="content">
                                     <div class="text-description">
                                           <h1 class="title">
@@ -87,9 +90,7 @@ export default {
                                     </div>
                               </div>
 
-                              <div class="cover_image mb-2">
-                                    <img :src="store.api_base_url + '/storage/' + project.cover_image" :alt="project.title">
-                              </div>
+
                         </div>
                   </div>
             </div>
@@ -113,6 +114,7 @@ export default {
 
 .container {
       margin-top: 80px;
+      margin-bottom: 80px;
       padding: 2rem 0;
       width: 80%;
       display: flex;
@@ -127,7 +129,7 @@ export default {
 
 
             .content {
-                  width: 40%;
+                  /* width: 40%; */
                   text-shadow: 5px 2px 5px rgb(48, 48, 48);
 
                   .title {
