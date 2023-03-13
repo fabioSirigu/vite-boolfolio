@@ -43,21 +43,17 @@ export default {
                                           Sono solamente tutto questo.
                                     </strong>
                               </p>
+
+
                         </div>
                   </div>
+                  <div class="cv my-4">
+                        <a v-bind:href="'/docs/FabioSiriguCv.pdf'" target="_blank" class="btn my-btn">Scarica il mio CV</a>
+                  </div>
                   <div class="social text-center">
-                        <h4>Seguimi sui social!</h4>
+                        <h4>Seguimi!</h4>
                         <ul class="d-flex justify-content-center">
-                              <li class="mx-4">
-                                    <a :href="store.instagramUrl" aria-current="page" target="_blank">
-                                          <font-awesome-icon icon="fa-brands fa-instagram" />
-                                    </a>
-                              </li>
-                              <li class="mx-4">
-                                    <a :href="store.facebookUrl" aria-current="page" target="_blank">
-                                          <font-awesome-icon icon="fa-brands fa-facebook-f" />
-                                    </a>
-                              </li>
+
                               <li class="mx-4">
                                     <a :href="store.linkedinUrl" aria-current="page" target="_blank">
                                           <font-awesome-icon icon="fa-brands fa-linkedin" />
@@ -108,6 +104,11 @@ export default {
                         font-size: 1.7rem;
                   }
             }
+      }
+
+      .cv {
+            display: flex;
+            justify-content: center;
       }
 
       .social {

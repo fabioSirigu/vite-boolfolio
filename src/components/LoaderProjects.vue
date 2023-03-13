@@ -27,11 +27,16 @@ export default {
       height: 100%;
       width: 80%;
       margin-top: 80px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
 
       .loading {
             height: 100%;
             width: 100%;
-            margin: auto;
 
             .loader-circle-11 {
                   position: relative;
