@@ -3,19 +3,18 @@ export default {
       name: 'HomeView',
       data() {
             return {
-                  jobTitles: ["Full Stack", "Front-End", "Back-End"],
-                  currentTitleIndex: 0
+                  jobTitles: ["Full-Stack", "Front-End", "Back-End"],
+                  currentTitleIndex: 0,
+                  isJobColor: false
             }
       },
       methods: {
             changeWord() {
                   setInterval(() => {
-                        const jobTitleElement = document.getElementById("job-title");
                         this.currentTitleIndex = (this.currentTitleIndex + 1) % this.jobTitles.length;
-                        jobTitleElement.textContent = `${this.jobTitles[this.currentTitleIndex]}`;
-                        jobTitleElement.classList.add("job-color");
-                  }, 2000);
-            }
+                        this.isJobColor = true;
+                  }, 3000);
+            },
       },
       mounted() {
             this.changeWord();
@@ -30,14 +29,21 @@ export default {
                   <router-link :to="{ name: 'portfolio' }" class="project_link">
                         <div>
                               <div class="layer">
-                                    <h1 class="title">
-                                          Ciao! Il mio nome è Fabio
-                                    </h1>
-                                    <h2>Benvenuto nel mio sito.</h2>
+                                    <h1><font-awesome-icon icon="fa-solid fa-code" /></h1>
+                                    <h2>Benvenuto nel mio mondo.</h2>
                                     <div class="about_me">
                                           <h2 class="description">
-                                                sono un Junior <span id="job-title"></span> Web Developer
-                                                <h4 class="link-project mt-5">Clicca qui per vedere i miei progetti!</h4>
+                                                sono un Junior <span v-text="jobTitles[currentTitleIndex]"
+                                                      :class="{ 'job-color': isJobColor }"></span> Web
+                                                Developer
+                                                <h4 class="my-2">. . .</h4>
+                                                <h4 class="my-2">
+                                                      <font-awesome-icon icon="fa-solid fa-bug" />
+                                                      ..ma anche tanto altro..
+                                                      <font-awesome-icon icon="fa-solid fa-bug" />
+                                                </h4>
+
+                                                <h4 class="link-project">clicca qui per vedere i miei progetti!</h4>
                                           </h2>
                                     </div>
                               </div>
@@ -59,17 +65,20 @@ export default {
 
 
 .content {
-      background-image: url(https://www.mo.agency/hubfs/So%20you%20want%20to%20be%20a%20web%20developer.png);
-      background-size: cover;
+
+
       display: flex;
-      justify-content: end;
+      justify-content: center;
 
       .project_link {
+            width: 80%;
             text-decoration: none;
             color: rgba(0, 0, 0, 0);
             font-size: 2rem;
             transition: 0.2s;
             text-transform: uppercase;
+            box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.8);
+
 
             &:hover {
                   scale: 1.1;
@@ -77,17 +86,12 @@ export default {
 
 
             .layer {
-                  width: 50%;
-                  margin: auto;
                   padding: 5rem;
-                  border-radius: 25px;
                   transition: 0.4s;
-                  background-color: rgba(0, 0, 0, 0.4);
-                  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.8);
+
                   font-family: $fontPrimary;
                   color: $secondary;
                   font-weight: bold;
-                  transition: 0.4s;
                   text-shadow: 5px 4px 4px rgb(48, 48, 48);
 
 
@@ -98,7 +102,7 @@ export default {
                   }
 
                   &:hover {
-                        box-shadow: 0px 0px 40px 10px rgba(128, 128, 128, 0.8);
+                        box-shadow: 0px 0px 30px 5px rgba(128, 128, 128, 0.8);
                         text-shadow: 5px 4px 4px rgb(48, 48, 48);
 
 

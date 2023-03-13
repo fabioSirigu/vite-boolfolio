@@ -36,7 +36,6 @@ export default {
 
       .loading {
             height: 100%;
-            width: 100%;
 
             .loader-circle-11 {
                   position: relative;

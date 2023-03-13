@@ -23,6 +23,7 @@ export default {
                         .get(url)
                         .then(response => {
                               this.projects = response.data.results;
+                              //console.log(this.projects);
                               this.loading = false
                         })
                         .catch(error => {
@@ -63,8 +64,8 @@ export default {
 </script>
 
 <template>
-      <div class="container project_list">
-            <section class="vue-home">
+      <section class="vue-home">
+            <div class="container">
                   <template v-if="projects && !loading">
                         <!-- Card dei progetti -->
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-4 g-4">
@@ -87,17 +88,18 @@ export default {
                                     <li class="page-item" v-if="projects.prev_page_url"
                                           @click="prevPage(projects.prev_page_url)">
                                           <a class="page-link arrow" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
+                                                <span aria-hidden="true"> Indietro &laquo; </span>
                                           </a>
                                     </li>
                                     <li class="page-item active" aria-current="page"><a class="page-link number" href="#">{{
                                           projects.current_page
                                     }}</a></li>
 
+
                                     <li class="page-item" v-if="projects.next_page_url"
                                           @click="nextPage(projects.next_page_url)">
                                           <a class="page-link arrow" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
+                                                <span aria-hidden="true">Avanti &raquo; </span>
                                           </a>
                                     </li>
                               </ul>
@@ -109,15 +111,14 @@ export default {
                   <div v-else>
                         <p> Nessun progetto! </p>
                   </div>
-            </section>
-      </div>
+            </div>
+      </section>
 </template>
 
 <style lang="scss" scoped>
 @import "../styles/general.scss";
 
 .vue-home {
-      height: 100%;
 
       .card {
             background-color: rgba(255, 255, 255, 0.7);
