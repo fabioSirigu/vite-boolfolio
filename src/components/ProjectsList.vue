@@ -123,7 +123,6 @@ export default {
       .card {
             background-color: rgba(255, 255, 255, 0.7);
             height: 100%;
-            border-radius: 25px;
             transition: 0.2s;
 
             &:hover {
@@ -140,7 +139,6 @@ export default {
             }
 
             .card-image {
-                  border-radius: 25px;
                   /* filter: blur(2px); */
                   width: 100%;
                   object-fit: cover;

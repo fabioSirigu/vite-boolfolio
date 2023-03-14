@@ -33,7 +33,7 @@ export default {
                                     <h2>Benvenuto nel mio mondo.</h2>
                                     <div class="about_me">
                                           <h2 class="description">
-                                                sono un Junior <span v-text="jobTitles[currentTitleIndex]"
+                                                sono fabio, <br> Jr. <span v-text="jobTitles[currentTitleIndex]"
                                                       :class="{ 'job-color': isJobColor }"></span> Web
                                                 Developer
                                                 <h4 class="my-2">. . .</h4>
