@@ -29,21 +29,23 @@ export default {
                   <router-link :to="{ name: 'portfolio' }" class="project_link">
                         <div>
                               <div class="layer">
+                                    <img src="/img/linkedinfoto.png" alt="" class="img_user">
                                     <h1><font-awesome-icon icon="fa-solid fa-code" /></h1>
-                                    <h2>Benvenuto nel mio mondo.</h2>
+
                                     <div class="about_me">
                                           <h2 class="description">
-                                                sono fabio, <br> Jr. <span v-text="jobTitles[currentTitleIndex]"
+                                                <span class="name">
+                                                      sono fabio <br>
+                                                </span>
+                                                Jr. <span v-text="jobTitles[currentTitleIndex]"
                                                       :class="{ 'job-color': isJobColor }"></span> Web
                                                 Developer
-                                                <h4 class="my-2">. . .</h4>
-                                                <h4 class="my-2">
+
+                                                <h4 class="link-project mt-4">
                                                       <font-awesome-icon icon="fa-solid fa-bug" />
-                                                      ..ma anche tanto altro..
+                                                      clicca qui per vedere i miei progetti!
                                                       <font-awesome-icon icon="fa-solid fa-bug" />
                                                 </h4>
-
-                                                <h4 class="link-project">clicca qui per vedere i miei progetti!</h4>
                                           </h2>
                                     </div>
                               </div>
@@ -86,13 +88,13 @@ export default {
 
 
             .layer {
-                  padding: 5rem;
+                  padding: 2rem;
                   transition: 0.4s;
-
                   font-family: $fontPrimary;
                   color: $secondary;
                   font-weight: bold;
                   text-shadow: 5px 4px 4px rgb(48, 48, 48);
+
 
 
                   .job-color {
@@ -121,13 +123,13 @@ export default {
                   }
 
                   .img_user {
-                        img {
-                              border: 2px solid $secondary;
-                              aspect-ratio: 1/1;
-                              object-fit: cover;
-                              transition: 0.2s;
-                              border-radius: 50%;
-                        }
+
+                        border: 2px solid $secondary;
+                        aspect-ratio: 1/1;
+                        object-fit: cover;
+                        transition: 0.2s;
+                        border-radius: 50%;
+
                   }
 
 

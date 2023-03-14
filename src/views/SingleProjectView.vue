@@ -31,80 +31,85 @@ export default {
 </script>
 
 <template>
-      <div class="container">
-            <div class="single-project" v-if="project">
+      <div>
+            <div class="container">
+                  <div class="single-project" v-if="project">
 
-                  <div class="d-flex">
-                        <div class="row row-cols-2">
-                              <div class="cover_image mb-2">
-                                    <img :src="store.api_base_url + '/storage/' + project.cover_image" :alt="project.title">
+                        <div class="d-flex">
+                              <div class="row row-cols-2">
+                                    <div class="cover_image mb-2">
+                                          <img :src="store.api_base_url + '/storage/' + project.cover_image"
+                                                :alt="project.title">
+                                    </div>
+                                    <div class="content">
+                                          <div class="text-description">
+                                                <h1 class="title">
+                                                      {{ project.title }}
+                                                </h1>
+                                          </div>
+                                          <div class="description py-4">
+                                                <h4>
+                                                      {{ project.description }}
+                                                </h4>
+                                          </div>
+
+                                          <div class="card-footer">
+                                                <strong>Linguaggio principale: </strong>
+                                                <div class="type d-flex">
+                                                      <span v-if="project.type">
+                                                            <h5 class="bold">
+                                                                  {{ project.type.name }}
+                                                            </h5>
+                                                      </span>
+                                                      <span v-else></span>
+
+                                                </div>
+                                                <div class="technologies">
+                                                      <template v-if="project.technologies.length > 0">
+                                                            <strong>Technologies: </strong>
+                                                            <ul class="technologies_list">
+                                                                  <li v-for="technology in project.technologies"
+                                                                        class="secondary-text">
+                                                                        <h5>
+                                                                              {{ technology.name }}
+                                                                        </h5>
+                                                                  </li>
+                                                            </ul>
+
+                                                      </template>
+                                                      <template v-else>
+                                                            <span>No technologies.</span>
+                                                      </template>
+                                                </div>
+                                          </div>
+                                          <div>
+                                                <strong>Link GitHub:</strong>
+                                                <div class="github_link">
+                                                      <a target="_blank" :href="project.gitHubUrl">
+                                                            {{ project.gitHubUrl }}
+                                                      </a>
+                                                </div>
+                                          </div>
+                                    </div>
+
+
                               </div>
-                              <div class="content">
-                                    <div class="text-description">
-                                          <h1 class="title">
-                                                {{ project.title }}
-                                          </h1>
-                                    </div>
-                                    <div class="description py-4">
-                                          <h4>
-                                                {{ project.description }}
-                                          </h4>
-                                    </div>
-
-                                    <div class="card-footer text-dark">
-                                          <strong>Linguaggio principale: </strong>
-                                          <div class="type d-flex">
-                                                <span v-if="project.type">
-                                                      <h5 class="bold">
-                                                            {{ project.type.name }}
-                                                      </h5>
-                                                </span>
-                                                <span v-else></span>
-
-                                          </div>
-                                          <div class="technologies">
-                                                <template v-if="project.technologies.length > 0">
-                                                      <strong>Technologies: </strong>
-                                                      <ul class="technologies_list">
-                                                            <li v-for="technology in project.technologies"
-                                                                  class="secondary-text">
-                                                                  <h5>
-                                                                        {{ technology.name }}
-                                                                  </h5>
-                                                            </li>
-                                                      </ul>
-
-                                                </template>
-                                                <template v-else>
-                                                      <span>No technologies.</span>
-                                                </template>
-                                          </div>
-                                    </div>
-                                    <div>
-                                          <strong>Link GitHub:</strong>
-                                          <div class="github_link">
-                                                <a target="_blank" :href="project.gitHubUrl">
-                                                      {{ project.gitHubUrl }}
-                                                </a>
-                                          </div>
-                                    </div>
-                              </div>
-
-
                         </div>
                   </div>
-            </div>
 
-            <router-link class="nav-link mt-2" :to="{ name: 'portfolio' }">
-                  <div class="btn text-white my-btn my-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                              class="bi bi-chevron-left" viewBox="0 0 16 16">
-                              <path fill-rule="evenodd"
-                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-                        </svg>
-                        Indietro
+                  <div class="button-link">
+                        <router-link class="nav-link mt-2" :to="{ name: 'portfolio' }">
+                              <div class="btn text-white my-btn my-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                          class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                          <path fill-rule="evenodd"
+                                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                    </svg>
+                                    Indietro
+                              </div>
+                        </router-link>
                   </div>
-            </router-link>
+            </div>
       </div>
 </template>
 
@@ -123,8 +128,6 @@ export default {
 
       .single-project {
             padding: 2rem;
-            background-color: rgba($color: white, $alpha: 0.5);
-            border-radius: 25px;
             box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.8);
 
 
@@ -191,6 +194,11 @@ export default {
 
                   }
             }
+      }
+
+      .button-link {
+            width: fit-content;
+            margin: auto;
       }
 }
 </style>

@@ -86,7 +86,7 @@ body {
             width: 100%;
             text-align: center;
 
-            .title,
+
             .description {
                   font-size: 16px;
             }
@@ -156,16 +156,19 @@ body {
             width: 100%;
             text-align: center;
 
-            .title,
+
             .description {
-                  font-size: 24px;
+                  font-size: 20px;
+
+                  .name {
+                        font-size: 3rem;
+                  }
             }
 
 
             .img_user {
-                  img {
-                        width: 180px;
-                  }
+                  width: 180px;
+
             }
       }
 
@@ -318,16 +321,19 @@ body {
             width: 80%;
             text-align: center;
 
-            .title,
+
+            .name {
+                  font-size: 3rem;
+            }
+
             .description {
                   font-size: 32px;
             }
 
 
             .img_user {
-                  img {
-                        width: 260px;
-                  }
+                  width: 260px;
+
             }
       }
 

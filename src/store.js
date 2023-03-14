@@ -48,5 +48,15 @@ export const store = reactive({
                   title: 'sass',
                   position: 1200,
             },
+            {
+                  image: '/img/tecnologies/vite.png',
+                  title: 'vite',
+                  position: 1200,
+            },
+            {
+                  image: '/img/tecnologies/logo-mysql-26300.png',
+                  title: 'mySql',
+                  position: 1200,
+            },
       ],
 }) 
